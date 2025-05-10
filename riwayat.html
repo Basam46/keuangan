@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riwayat Pengeluaran - PengeluaranKu</title>
+    <link rel="stylesheet" href="css/tambahan.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div class="logo">MudahHemat</div>
+        <ul class="nav-menu">
+          <li><a href="beranda.html">Beranda</a></li>
+          <li><a href="tambahan.html">Dashboard</a></li>
+          <li><a href="riwayat.html">Riwayat</a></li>
+          <li><a href="akun.html">Akun</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Riwayat Pengeluaran -->
+    <section class="container" style="margin-top: 40px">
+      <h2>Riwayat Pengeluaran</h2>
+      <div class="filter-bar" style="margin: 16px 0">
+        <select id="filterKategori">
+          <option value="">Semua Kategori</option>
+          <option value="Makan">Makan</option>
+          <option value="Transportasi">Transportasi</option>
+          <option value="Kebutuhan">Kebutuhan</option>
+        </select>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Kategori</th>
+              <th>Deskripsi</th>
+              <th>Jumlah</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>09-05-2025</td>
+              <td>Makan</td>
+              <td>Makan siang</td>
+              <td>Rp 25.000</td>
+            </tr>
+            <tr>
+              <td>08-05-2025</td>
+              <td>Transportasi</td>
+              <td>Bus</td>
+              <td>Rp 10.000</td>
+            </tr>
+            <tr>
+              <td>07-05-2025</td>
+              <td>Kebutuhan</td>
+              <td>Sabun mandi</td>
+              <td>Rp 8.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 MudahHemat — Dibuat oleh Muh. Dzulkifli Basam</p>
+    </footer>
+  </body>
+</html>

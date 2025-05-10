@@ -1,0 +1,355 @@
+:root {
+  --primary: #6366f1; /* Indigo */
+  --primary-dark: #4f46e5;
+  --accent: #f97316; /* Orange */
+  --bg: #f3f4f6;
+  --white: #ffffff;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --radius: 14px;
+  --transition: all 0.3s ease-in-out;
+  --font: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: var(--transition);
+}
+
+.navbar {
+  background: linear-gradient(to right, var(--primary-dark), var(--primary));
+  padding: 18px 0;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+}
+
+.nav-menu a {
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: var(--transition);
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  background: linear-gradient(to right, #93c5fd, #c7d2fe);
+  padding: 80px 20px;
+  text-align: center;
+  color: #111827;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 28px;
+  color: var(--text-light);
+}
+
+.btn {
+  background-color: var(--accent);
+  color: white;
+  padding: 12px 24px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: #ea580c;
+  transform: translateY(-2px);
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.table-container {
+  margin-top: 32px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--white);
+}
+
+th,
+td {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background-color: #f9fafb;
+  color: var(--text-light);
+  font-weight: 600;
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #f3f4f6;
+}
+
+.filter-bar {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-bar select {
+  padding: 10px;
+  border-radius: var(--radius);
+  border: 1px solid #d1d5db;
+  box-shadow: var(--shadow);
+}
+
+.footer {
+  background-color: #e5e7eb;
+  padding: 24px;
+  text-align: center;
+  color: var(--text-light);
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+
+/* Tombol Tambah (+) */
+.add-button {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.add-button:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--white);
+  margin: 10% auto;
+  padding: 24px;
+  border-radius: var(--radius);
+  width: 90%;
+  max-width: 400px;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content input,
+.modal-content select {
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #ea580c;
+}
+
+/* Toast Notification */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: var(--primary-dark);
+  color: white;
+  text-align: center;
+  border-radius: var(--radius);
+  padding: 16px;
+  position: fixed;
+  z-index: 1001;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  box-shadow: var(--shadow);
+  font-weight: 500;
+}
+
+.toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Total Ringkasan */
+.total-ringkasan {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: var(--white);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: right;
+  color: var(--text);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+/* Animasi Fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlide 0.8s ease forwards;
+}
+
+/* Animasi Slide dari Kiri */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideLeft 0.8s ease forwards;
+}
+
+/* Animasi Slide dari Kanan */
+.slide-right {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: slideRight 0.8s ease forwards;
+}
+
+/* Keyframes */
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PengeluaranKu - Dashboard</title>
+    <link rel="stylesheet" href="css/tambahan.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">MudahHemat</div>
+        <ul class="nav-menu">
+          <li><a href="beranda.html">Beranda</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="riwayat.html">Riwayat</a></li>
+          <li><a href="akun.html">Akun</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-content">
+        <h1>Atur Keuangan Harian Lebih Cerdas</h1>
+        <p>
+          Dashboard intuitif untuk mencatat, memantau, dan mengelola setiap
+          pengeluaranmu secara real-time.
+        </p>
+        <a href="#dashboard" class="btn">Mulai Sekarang</a>
+      </div>
+    </section>
+    <!-- Dashboard -->
+    <main id="dashboard" class="dashboard container">
+      <h2>Ringkasan Pengeluaran</h2>
+      <div class="cards">
+        <div class="card">
+          <p>Total Hari Ini</p>
+          <h3>Rp 120.000</h3>
+        </div>
+        <div class="card">
+          <p>Total Minggu Ini</p>
+          <h3>Rp 750.000</h3>
+        </div>
+      </div>
+      <h2>Riwayat Pengeluaran</h2>
+      <div class="filter-bar">
+        <select id="filterKategori">
+          <option value="">Semua Kategori</option>
+          <option value="Makan">Makan</option>
+          <option value="Transportasi">Transportasi</option>
+          <option value="Kebutuhan">Kebutuhan</option>
+        </select>
+        <button class="btn-export" onclick="exportToCSV()">Export CSV</button>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Kategori</th>
+              <th>Deskripsi</th>
+              <th>Jumlah</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10-05-2025</td>
+              <td>Makan</td>
+              <td>Sarapan</td>
+              <td>Rp 20.000</td>
+            </tr>
+            <tr>
+              <td>10-05-2025</td>
+              <td>Transportasi</td>
+              <td>Ojek</td>
+              <td>Rp 15.000</td>
+            </tr>
+            <tr>
+              <td>10-05-2025</td>
+              <td>Kebutuhan</td>
+              <td>Sabun</td>
+              <td>Rp 10.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="total-ringkasan">
+        <strong>Total:</strong> <span id="totalJumlah">Rp 0</span>
+      </div>
+    </main>
+    <!-- Tombol Tambah -->
+    <button class="add-button" onclick="openModal()">+</button>
+    <!-- Modal -->
+    <div id="expenseModal" class="modal">
+      <div class="modal-content">
+        <h3>Tambah Pengeluaran</h3>
+        <input type="date" />
+        <select>
+          <option value="">Pilih Kategori</option>
+          <option>Makan</option>
+          <option>Transportasi</option>
+          <option>Kebutuhan</option>
+        </select>
+        <input type="text" placeholder="Deskripsi" />
+        <input type="number" placeholder="Jumlah (Rp)" />
+        <button onclick="closeModal()">Simpan</button>
+      </div>
+    </div>
+    <!-- Toast Notifikasi -->
+    <div id="toast" class="toast">Berhasil ditambahkan</div>
+    <footer class="footer">
+      <p>&copy; 2025 MudahHemat — Dibuat oleh Muh. Dzulkifli Basam</p>
+    </footer>
+    <script src="js/tambahan.js"></script>
+  </body>
+</html>
